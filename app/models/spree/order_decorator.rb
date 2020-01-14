@@ -1,7 +1,7 @@
 module Spree
   module OrderDecorator
 
-    SHIPPED_STATES = ['shipped', 'partial'] unless SHIPPED_STATES
+    SHIPPED_STATES = ['shipped', 'partial']
     def self.prepended(base)
       base.scope :returned, -> { where(shipment_state: base.SHIPPED_STATES) }
     end
