@@ -3,7 +3,7 @@ module Spree
 
     SHIPPED_STATES = ['shipped', 'partial'] unless SHIPPED_STATES
     def self.prepended(base)
-      base.scope :returned, -> { where(shipment_state: SHIPPED_STATES) }
+      base.scope :returned, -> { where(shipment_state: base.SHIPPED_STATES) }
     end
 
     def has_returnable_products?
