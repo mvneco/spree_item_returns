@@ -10,9 +10,9 @@ module Spree
       return if self.class_variable_get(:@@already_prepended)
       self.class_variable_set(:@@already_prepended, true)
 
-      puts 'Spree::AppConfigurationSpreeItemReturnsDecorator.self.prepended(base) :: A'
-      base.preference :return_initiation_admin_mail_address, :string, default: 'spree@example.com'
-      puts 'Spree::AppConfigurationSpreeItemReturnsDecorator.self.prepended(base) :: B'
+      puts 'Spree::AppConfigurationSpreeItemReturnsDecorator.self.prepended(base) :: A1'
+      base.self.preference :return_initiation_admin_mail_address, :string, default: 'spree@example.com'
+      puts 'Spree::AppConfigurationSpreeItemReturnsDecorator.self.prepended(base) :: B1'
     end
   end
 end
