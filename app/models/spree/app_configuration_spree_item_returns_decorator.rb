@@ -1,5 +1,5 @@
 module Spree
-  module AppConfigurationDecorator
+  module AppConfigurationSpreeItemReturnsDecorator
 
     # Crucial to prevent multiple invocations of self.prepended(base)!
     @@already_prepended = false unless defined? @@already_prepended
@@ -15,4 +15,4 @@ module Spree
   end
 end
 
-Spree::AppConfiguration.prepend(Spree::AppConfigurationDecorator)
+Spree::AppConfiguration.prepend(Spree::AppConfigurationSpreeItemReturnsDecorator)
