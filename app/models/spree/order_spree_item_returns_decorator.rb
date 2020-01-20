@@ -1,7 +1,7 @@
 module Spree
   module OrderSpreeItemReturnsDecorator
 
-    SHIPPED_STATES = ['shipped', 'partial']
+    SHIPPED_STATES = ['shipped', 'partial'] unless defined? SHIPPED_STATES
 
     # Crucial to prevent multiple invocations of self.prepended(base)!
     @@already_prepended = false unless defined? @@already_prepended
