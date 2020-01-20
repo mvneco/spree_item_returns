@@ -1,5 +1,5 @@
 module Spree
-  module FrontendHelperDecorator
+  module FrontendHelperSpreeItemReturnsDecorator
 
     def exchange_for_item_return?(return_item)
       return_item.persisted? && return_item.exchange_variant_id?
@@ -22,4 +22,4 @@ module Spree
   end
 end
 
-Spree::FrontendHelper.prepend(Spree::FrontendHelperDecorator)
+Spree::FrontendHelper.prepend(Spree::FrontendHelperSpreeItemReturnsDecorator)
