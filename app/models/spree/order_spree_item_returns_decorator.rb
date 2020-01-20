@@ -12,7 +12,7 @@ module Spree
       return if self.class_variable_get(:@@already_prepended)
       self.class_variable_set(:@@already_prepended, true)
       
-      base.scope :returned, -> { where(shipment_state: base.SHIPPED_STATES) }
+      base.scope :returned, -> { where(shipment_state: SHIPPED_STATES) }
     end
 
     def has_returnable_products?
