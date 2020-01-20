@@ -10,9 +10,9 @@ module Spree
       return if self.class_variable_get(:@@already_prepended)
       self.class_variable_set(:@@already_prepended, true)
 
-      base.stock_location_validations = base._validators[:stock_location]
-      if base.stock_location_validations.present?
-        base.stock_location_validations.reject! { |validation| validation.is_a? ActiveRecord::Validations::PresenceValidator }
+      stock_location_validations = base._validators[:stock_location]
+      if stock_location_validations.present?
+        stock_location_validations.reject! { |validation| validation.is_a? ActiveRecord::Validations::PresenceValidator }
       end
 
       base._validate_callbacks.each do |callback|
