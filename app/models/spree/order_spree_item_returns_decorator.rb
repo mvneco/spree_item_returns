@@ -1,5 +1,5 @@
 module Spree
-  module OrderDecorator
+  module OrderSpreeItemReturnsDecorator
 
     SHIPPED_STATES = ['shipped', 'partial']
 
@@ -26,4 +26,4 @@ module Spree
   end
 end
 
-Spree::Order.prepend(Spree::OrderDecorator)
+Spree::Order.prepend(Spree::OrderSpreeItemReturnsDecorator)
