@@ -11,7 +11,7 @@ module Spree
       self.class_variable_set(:@@already_prepended, true)
 
       puts 'Spree::AppConfigurationSpreeItemReturnsDecorator.self.prepended(base) :: A1'
-      base.self.preference :return_initiation_admin_mail_address, :string, default: 'spree@example.com'
+      self.preference :return_initiation_admin_mail_address, :string, default: 'spree@example.com'
       puts 'Spree::AppConfigurationSpreeItemReturnsDecorator.self.prepended(base) :: B1'
     end
   end
