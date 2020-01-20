@@ -22,4 +22,4 @@ module Spree
   end
 end
 
-Spree::FrontendHelper.prepend(Spree:FrontendHelperDecorator)
+Spree::FrontendHelper.prepend(Spree::FrontendHelperDecorator)
