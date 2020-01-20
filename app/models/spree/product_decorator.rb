@@ -1,7 +1,12 @@
-Spree::Product.class_eval do
+module Spree
+  module ProductDecorator
+  
+    def prepended(base)
+      base.validates :return_time, numericality: { greater_than_or_equal_to: 0 }
+      base.scope :returnable, -> { where(returnable: true) }
+    end
 
-  validates :return_time, numericality: { greater_than_or_equal_to: 0 }
-
-  scope :returnable, -> { where(returnable: true) }
-
+  end
 end
+
+Spree::Product.prepend(Spree::ProductDecorator)
