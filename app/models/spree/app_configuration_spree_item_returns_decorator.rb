@@ -17,5 +17,4 @@ module Spree
   end
 end
 
-#Spree::AppConfiguration.prepend(Spree::AppConfigurationSpreeItemReturnsDecorator)
-Spree::Config.prepend(Spree::AppConfigurationSpreeItemReturnsDecorator)
+Spree::AppConfiguration.prepend(Spree::AppConfigurationSpreeItemReturnsDecorator)
