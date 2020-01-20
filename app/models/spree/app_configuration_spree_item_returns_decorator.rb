@@ -15,6 +15,9 @@ module Spree
       puts "Spree::AppConfigurationSpreeItemReturnsDecorator.self.prepended(base) :: A3 #{self.inspect}"
       base.preference :return_initiation_admin_mail_address, :string, default: 'spree@example.com'
       puts 'Spree::AppConfigurationSpreeItemReturnsDecorator.self.prepended(base) :: B1'
+      puts "Spree::AppConfigurationSpreeItemReturnsDecorator.self.prepended(base) :: B2 #{base.has_preference?('return_initiation_admin_mail_address')}"
+      puts "Spree::AppConfigurationSpreeItemReturnsDecorator.self.prepended(base) :: B3 #{base.has_preference?(:return_initiation_admin_mail_address)}"
+      
     end
   end
 end
